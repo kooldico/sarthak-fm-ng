@@ -1,0 +1,68 @@
+<ng-container *ngFor="let showVideo of showVideos">
+
+  <div class="topsongs-banner" *ngIf="showVideo.widget_type==1">
+          <div class="home-shade">
+            <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/whiteshde-up.png" />
+          </div>
+          <owl-carousel
+            [options]="{ items: 1, dots: false, navigation: true, loop: true }"
+
+            [carouselClasses]="['owl-theme', 'row', 'sliding']"
+          >
+            <div class="item" *ngFor="let itemBanner of showVideo.banner">
+              <div class="topsongs-banslide">
+                <img src="{{itemBanner.imageFullPath}}" alt="" />
+              </div>
+            </div>
+
+          </owl-carousel>
+        </div>
+
+        <div class="home-bg" *ngIf="showVideo.widget_type==6">
+          <!-- <h2><img src="../../assets/universal/vedioicon.png" />Movie Trailor</h2> -->
+          <div class="songsdiv">
+            <h2>{{showVideo.VideoCategories.title}}</h2>
+            <div class="songsdiv-cont">
+              <owl-carousel
+              [options]="OwlOptionssix"
+
+                [carouselClasses]="['owl-theme','sliding']"
+              >
+                <div class="item" *ngFor="let itemVideos of showVideo.VideoCategories.videoList">
+                  <div class="topsongs-slidediv-box" (click)="playVideo(itemVideos.slug)">
+                    <img src="{{itemVideos.thumbnailFullPath}}" />
+                    <div class="slidediv-shadow">
+                      <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/play-button.png" />
+                    </div>
+                  </div>
+                </div>
+
+              </owl-carousel>
+            </div>
+          </div>
+
+        </div>
+
+
+</ng-container>
+
+
+
+
+      <div class="modal-cont">
+          <div class="modalcross" (click)="close()">
+            <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/cross.png" />
+          </div>
+          <div class="modal-cont-div">
+            <div class="playerdiv">
+              <video
+                id="video_player_id3"
+                class="video-js vjs-big-play-centered"
+                controls preload="auto"
+              >
+                <source src="../../assets/bannervedioone.mp4" type="video/mp4" />
+                <!-- <source [src]="channelDetailsData?.channel_video_url" type='application/x-mpegURL'> -->
+              </video>
+            </div>
+          </div>
+        </div>

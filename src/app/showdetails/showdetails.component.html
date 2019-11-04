@@ -1,0 +1,67 @@
+<div class="showdetails-page-banner">
+  <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/banner/showban.jpg" />
+  <div class="home-shade">
+    <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/whiteshde-up.png" />
+  </div>
+</div>
+<div class="home-bg">
+  <h2>
+    <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/microphoneicon.png" /> {{showData.title}}
+  </h2>
+
+  <div class="detailscont">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="show-images">
+          <img src="{{showData.thumbnailFullPath}}" />
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="shows-details">
+          <h2>About The Show</h2>
+          <p>
+            {{showData.description}}
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="similar-show">
+    <h2>Other Shows</h2>
+    <div class="similar-show-cont">
+      <ng-container *ngIf="slideFlag==1">
+
+        <owl-carousel [options]="OwlOptionsfour" [carouselClasses]="['owl-theme','sliding']" >
+          <div class="item" *ngFor="let list of showOtherData">
+            <div class="showbox">
+              <div class="showbox-top">
+                <h2>
+                  <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/microphoneicon-red.png" /> {{list.title}}
+                </h2>
+              </div>
+              <div class="show-bottom">
+                  <img src="{{list.thumbnailFullPath}}">
+                <h3>{{list.fullStartTime}} - {{list.fullEndTime}}</h3>
+                <p>{{list.week}}</p>
+                <a href="javascript:;" (click)="changeRt(list.slug)">Show Details</a>
+              </div>
+            </div>
+          </div>
+      </owl-carousel>
+
+      </ng-container>
+    </div>
+  </div>
+</div>
+
+<ngx-spinner
+bdOpacity = 0.9
+bdColor = "#e50d0d"
+size = "large"
+color = "#fff"
+type = "line-scale-party"
+[fullScreen] = "true"
+>
+<h3> Sarthak FM </h3>
+</ngx-spinner>

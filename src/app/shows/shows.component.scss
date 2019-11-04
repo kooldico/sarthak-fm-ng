@@ -1,0 +1,125 @@
+.show-page-banner {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .home-shade {
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    bottom: 0;
+    img {
+      width: 100%;
+      @media screen and (max-width: 768px) {
+        position: relative;
+        left: 0;
+        bottom: -5px;
+      }
+    }
+  }
+}
+.home-bg {
+  width: 100%;
+  height: initial;
+  background-image: url("../../assets/universal/homebg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 30px 0px;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 50px;
+  h2 {
+    font-size: 34px;
+    color: #f60038;
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    img {
+      height: 35px;
+      width: 35px;
+      margin-right: 10px;
+      position: relative;
+      top: -5px;
+      @media screen and (max-width: 576px) {
+        height: 26px;
+        width: 30px;
+      }
+    }
+    @media screen and (max-width: 576px) {
+      font-size: 24px;
+    }
+  }
+  .showcontainer {
+    padding: 50px 70px 30px;
+    @media screen and (max-width: 768px) {
+      padding: 20px 20px 20px 20px;
+    }
+    .showbox {
+      width: 100%;
+      margin-bottom: 20px;
+      .showbox-top {
+        width: 100%;
+        padding: 15px 0px;
+        text-align: center;
+        background-color: #f60038;
+        border-top-right-radius: 20px;
+
+        h2 {
+          font-size: 26px;
+          color: #fff;
+          margin: 0px;
+          img {
+            width: 50px;
+            height: 40px;
+            position: relative;
+            top: 0px;
+          }
+        }
+      }
+      .show-bottom {
+        width: 100%;
+        background-color: #fff;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.26);
+        padding: 0px 0px 30px;
+        border-bottom-left-radius: 20px;
+        text-align: center;
+        img{
+          width: 100%;
+          margin-bottom: 5px;
+        }
+        h3 {
+          font-size: 24px;
+          color: #333;
+        }
+        p {
+          font-size: 20px;
+          color: #555;
+        }
+        a {
+          text-decoration: none;
+          font-size: 16px;
+          color: #fff;
+          background-color: #f60038;
+          padding: 7px 30px;
+          transition: all 0.4s;
+          -ms-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          -moz-transition: all 0.4s;
+          -webkit-transition: all 0.4s;
+          &:hover {
+            background-color: #333;
+          }
+        }
+      }
+    }
+  }
+}

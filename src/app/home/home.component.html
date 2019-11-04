@@ -1,0 +1,190 @@
+
+
+  <div class="home-cont">
+    <div class="home-ban" *ngFor="let showBan of showBans">
+        <video id="video_player_id" class="video-js vjs-big-play-centered" controls preload="auto">
+            <source [src]="showBan.banner?.link" type='application/x-mpegURL'>
+              <!-- <source [src]="channelDetailsData?.channel_video_url" type='application/x-mpegURL'> -->
+          </video>
+
+
+
+
+
+
+      <div class="home-shade">
+        <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/whiteshde-up.png"/>
+      </div>
+    </div>
+    <div class="home-bg">
+      <div class="home-top-ang">
+        <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/topang.png" />
+      </div>
+      <div class="home-btm-ang">
+          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/btmang.png" />
+        </div>
+
+        <ng-container *ngFor="let showHome of showHomes">
+
+          <div class="section-holder" *ngIf="showHome.widget_type==2">
+            <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/vedioicon.png" /> {{showHome.collection.title}}</h2>
+            <!-- <div class="all-show">
+              <a href="javascript:;" [routerLink]="['/movietrailor']">View All</a>
+            </div> -->
+            <div class="section-holder-inn">
+              <div class="section-holder-cont">
+                <owl-carousel [options]="OwlOptionstwo"
+
+
+                  [carouselClasses]="['owl-theme', 'sliding']"
+                >
+                  <div class="item" *ngFor="let showColl of showHome.collection.collectionList">
+                    <div class="section-holder-box v_modal">
+                      <a href="javascript:;" (click)="play(showColl.slug)">
+                        <img src="{{showColl.thumbnailFullPath}}" />
+                        <div class="img-shadow">
+                          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/play-button.png" />
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+
+                </owl-carousel>
+                <owl-carousel
+                [options]="OwlOptionsone"
+
+                  [carouselClasses]="['owl-theme', 'sliding']"
+                >
+                  <!-- <div class="item" *ngFor="let showColl of showHome.collection.collectionList">
+                    <div class="section-holder-box v_modal">
+                      <a href="javascript:;">
+                        <img src="{{showColl.thumbnailFullPath}}" />
+                        <div class="img-shadow">
+                          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/play-button.png" />
+                        </div>
+                      </a>
+                    </div>
+                  </div> -->
+
+                </owl-carousel>
+              </div>
+            </div>
+          </div>
+
+       <div class="section-holder" *ngIf="showHome.widget_type==3">
+          <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/videocamicon.png" /> Shows</h2>
+
+          <div class="section-holder-inn ">
+
+
+
+            <div class="homeshow">
+              <owl-carousel  [options]="OwlOptionsten"
+
+                [carouselClasses]="['owl-theme', 'sliding']"
+              >
+                <div class="item" *ngFor="let showItem of showHome.show">
+                  <div class="home-showslide">
+                    <div class="showbox-top">
+                      <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/microphoneicon-red.png"> {{showItem.title}}</h2>
+                    </div>
+                    <div class="show-bottom">
+                      <img src="{{showItem.imageFullPath}}">
+                      <h3>{{showItem.start_time}} - {{showItem.end_time}}</h3>
+                      <p>{{showItem.week}}</p>
+                      <a href="javascript:;" routerLink="/show-detail/{{showItem.slug}}">Show Details</a>
+                    </div>
+                  </div>
+                </div>
+              </owl-carousel>
+            </div>
+
+
+          </div>
+      </div>
+      <div class="section-holder" *ngIf="showHome.widget_type==4">
+          <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/microphoneicon.png" /> RJ's</h2>
+
+          <div class="section-holder-inn">
+
+
+
+            <div class="section-holder-cont">
+              <owl-carousel  [options]="OwlOptionsthree"
+
+                [carouselClasses]="['owl-theme',  'sliding']"
+              >
+                <div class="item" *ngFor="let jockeyItem of showHome.jockey">
+                  <div class="section-holder-box">
+                    <a href="/rj/{{jockeyItem.slug}}">
+                      <img src="{{jockeyItem.verticalImagePath}}" />
+                      <div class="img-shadow">
+                        <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/magnifying.png" />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+              </owl-carousel>
+
+            </div>
+          </div>
+
+
+      </div>
+
+      <div class="home-news" *ngIf="showHome.widget_type==5">
+          <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/megaphone.png" />  Recent News</h2>
+        <div class="home-news-div">
+            <owl-carousel
+            [options]="{items: 1, dots: false, navigation: false}"
+
+
+
+            [carouselClasses]="['owl-theme', 'row', 'sliding']">
+            <div class="item">
+                <div class="home-news-box">
+                  <p>This package is a wrapper for the jquery library owl.carousel. Jquery is not supported in Angular Universal currently. Therefore the carousel cannot be rendered server side. However if you are using angular universal, do not include owl.carousel </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="home-news-box">
+                  <p>This package is a wrapper for the jquery library owl.carousel. Jquery is not supported in Angular Universal currently. Therefore the carousel cannot be rendered server side. However if you are using angular universal, do not include owl.carousel </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="home-news-box">
+                  <p>This package is a wrapper for the jquery library owl.carousel. Jquery is not supported in Angular Universal currently. Therefore the carousel cannot be rendered server side. However if you are using angular universal, do not include owl.carousel </p>
+                </div>
+            </div>
+          </owl-carousel>
+        </div>
+      </div>
+
+      </ng-container>
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+<div class="modal-cont">
+    <div class="modalcross" (click)="close()">
+      <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/cross.png" />
+    </div>
+    <div class="modal-cont-div">
+      <div class="playerdiv">
+          <video id="video_player_id4" class="video-js vjs-big-play-centered" controls preload="auto">
+              <source [src]="playVid?.video_link" type='application/x-mpegURL'>
+                <!-- <source [src]="channelDetailsData?.channel_video_url" type='application/x-mpegURL'> -->
+            </video>
+
+
+      </div>
+    </div>
+  </div>

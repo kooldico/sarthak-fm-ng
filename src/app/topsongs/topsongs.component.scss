@@ -1,0 +1,298 @@
+.topsongs-banner{
+    width: 100%;
+    overflow: hidden;
+    max-height: 500px;
+    position: relative;
+    img {
+        width: 100%;
+      }
+    .home-shade {
+        width: 100%;
+    position: absolute;
+    z-index: 100;
+    left: 0;
+    bottom: 0;
+        img {
+          width: 100%;
+          @media screen and (max-width: 768px) {
+            position: relative;
+            left: 0;
+            bottom: -5px;
+          }
+        }
+    }
+    .topsongs-banslide{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}
+.home-bg {
+    width: 100%;
+    height: initial;
+    background-image: url("../../assets/universal/homebg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 30px 0px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 70px;
+
+    h2 {
+      font-size: 34px;
+      color: #f60038;
+      text-transform: uppercase;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+      img {
+        height: 35px;
+        width: 35px;
+        margin-right: 10px;
+        position: relative;
+        top: -5px;
+        @media screen and (max-width: 576px) {
+          height: 26px;
+          width: 30px;
+        }
+      }
+      @media screen and (max-width: 576px) {
+        font-size: 24px;
+      }
+    }
+    .songsdiv{
+        width: 100%;
+        padding: 50px 0px;
+        @media screen and(max-width:992px){
+            padding: 30px 0;
+        }
+        h2{
+            text-align: center;
+            font-size: 34px;
+            color: #f60038;
+            margin-bottom: 60px;
+            @media screen and (max-width:992px){
+                margin-bottom: 15px;
+                font-size: 26px;
+            }
+        }
+        .songsdiv-cont{
+            width: 100%;
+            border-top: 50px solid #f60038;
+            box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.29);
+            transform: translateZ(0) skewY(8deg);
+            @media screen and (max-width:992px){
+                border-top: 25px solid #f60038;
+                transform: translateZ(0) skewY(0deg);
+            }
+        }
+        .topsongs-slidediv-box{
+            width: 100%;
+            position: relative;
+            cursor: pointer;
+            img{
+                width: 100%;
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+            .slidediv-shadow{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: #f6003870;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                transition: all .4s;
+                -moz-transition: all .4s;
+                -ms-transition: all .4s;
+                -o-transition: all .4s;
+                -webkit-transition: all .4s;
+                transform: scale(0);
+                img{
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+            &:hover .slidediv-shadow{
+                transform: scale(1);
+            }
+           
+        }
+        .bottom-text{
+            width: 100%;
+            padding: 10px 20px;
+            &::after{
+                contain: "";
+                display: block;
+                clear: both;
+            }
+            @media screen and(max-width:768px){
+                padding: 3px 5px;
+            }   
+            .bottom-text-left{
+                float: left;
+                h2{
+                    font-size: 20px;
+                    color: #f60038;
+                    margin: 0;
+                    @media screen and(max-width:576px){
+                        font-size: 12px;
+                        text-align: left;
+                    }  
+                }
+                p{
+                    font-size: 16px;
+                    color: #333;
+                    margin-bottom: 8px;
+                    @media screen and(max-width:576px){
+                        font-size: 8px;
+                        text-align: left;
+                    }  
+                }
+            }
+            .bottom-text-right{
+                float: right;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                -webkit-animation: playnow 1s infinite;
+                -moz-animation: playnow 1s infinite;
+                -o-animation: playnow 1s infinite;
+                -ms-animation: playnow 1s infinite;
+                animation: playnow 1s infinite;
+                @keyframes playnow {
+                    0%{opacity: 1;}
+                    50%{opacity: .5;}
+                    100%{opacity: 1;}
+                }
+                img{
+                    width: 30px;
+                    @media screen and(max-width:576px){
+                        width: 10px;
+                    }  
+                }
+                span{
+                    font-size: 20px;
+                    color:#f60038; 
+                    @media screen and(max-width:576px){
+                        font-size: 10px;
+                    }
+                }
+                @media screen and (max-width:576px){
+                    float: left;
+                }
+            }
+        }
+        .bottom-play{
+            padding: 10px 20px;
+            .bottom-text-left2{
+                float: left;
+                h2{
+                    font-size: 20px;
+                    color: #f60038;
+                    margin: 0;
+                    
+                }
+                p{
+                    font-size: 16px;
+                    color: #333;
+                    margin-bottom: 8px;
+                }
+            }
+            .bottom-text-right2{
+                float: right;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                -webkit-animation: playnow 1s infinite;
+                -moz-animation: playnow 1s infinite;
+                -o-animation: playnow 1s infinite;
+                -ms-animation: playnow 1s infinite;
+                animation: playnow 1s infinite;
+                @keyframes playnow {
+                    0%{opacity: 1;}
+                    50%{opacity: .5;}
+                    100%{opacity: 1;}
+                }
+                img{
+                    width: 30px;
+                }
+                span{
+                    font-size: 20px;
+                    color:#f60038; 
+                    @media screen and(max-width:576px){
+                        font-size: 10px;
+                    }  
+                }
+            }
+        }
+    }
+
+
+
+
+
+}
+
+
+.modal-cont{
+    width: 100%;
+    height:100%;
+    background-color: #000000f0;
+    padding: 5% 5%;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .4s;
+    -webkit-transition: all .4s;
+    -ms-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transform: scale(0);
+    .modalcross{
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 15px;
+        z-index: 1200;
+        cursor: pointer;
+        img{
+            width: 30px;
+            height: 30px;
+            @media screen and (max-width:576px){
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    .modal-cont-div{
+        width: 100%;
+        height: 100%;
+        background-color:transparent;
+        position: relative;
+        
+        .playerdiv{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index:1100 ;
+            top: 0;
+            left: 0;
+            .video_player_id2-dimensions {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+.modalshow{
+    transform: scale(1);
+}

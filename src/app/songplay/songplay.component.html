@@ -1,0 +1,61 @@
+<div class="songplay-cont">
+  <div class="songplay-holder">
+    <div class="songplay-holder-left">
+      <div class="songplay-img">
+        <img src="{{image}}" />
+      </div>
+      <div class="songplay-mane">
+        <h2>{{songTitles}}</h2>
+        <p>{{songDescription}}</p>
+      </div>
+    </div>
+    <div class="songplay-holder-center">
+      <div class="songplay-prev" (click)="prev(buttonSlugP)" *ngIf="slug!='fm-link'">
+          <img src="assets/universal/preview.png" />
+      </div>
+      <div class="songplay-play">
+          <div class="liveplay clicklive playdisplay" (click)="pausePlay()">
+              <img src="assets/universal/pause2.png" />
+            </div>
+            <div class="livepause clicklive" (click)="pauseAudio()">
+                <img src="assets/universal/play.png" />
+              </div>
+      </div>
+      <div class="songplay-next" (click)="next(buttonSlug)" *ngIf="slug!='fm-link'">
+          <img src="assets/universal/next.png" />
+      </div>
+    </div>
+    <div class="songplay-holder-right">
+      <div class="songplay-rightbox musicclose" (click)="close()">
+        <i class="fa fa-window-close"></i>
+      </div>
+      <div class="songplay-rightbox music-vol">
+          <div class="livesound">
+            <div class="sound-icon">
+              <img src="assets/universal/audio-speaker-on.png" class="audio-on" />
+              <img
+                src="assets/universal/audio-speaker-off.png"
+                class="audio-off soundplay"
+              />
+            </div>
+            <div class="sound-drag">
+              <div class="livesound-box">
+                <!-- <input id="volume" type="range" min="0" max="10" value="0"  /> -->
+                <div id="slider-range-max" class="range-min2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+  <div class="progess-bar" *ngIf="slug!='fm-link'">
+    <div id="slider-range-min"></div>
+  </div>
+</div>
+
+<div class="audioPlayer-audio">
+  <audio controls id="mainAudio">
+    <source src="" type="audio/mpegURL" >
+  </audio>
+</div>

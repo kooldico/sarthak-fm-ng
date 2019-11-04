@@ -1,0 +1,103 @@
+<div class="search-bg">
+  <div class="home-bg">
+    <div class="search-cross">
+      <span>X</span>
+    </div>
+    <div class="searchdiv-wrap">
+      <input type="text" [(ngModel)]="searchData.value"  placeholder="Search here..." />
+      <div class="search-btn" (click)="search(searchData.value)">
+        <img src=" assets/universal/magnifying.png" />
+      </div>
+    </div>
+    <!-- <div class="category-search">
+      <h2>Category Search</h2>
+      <div class="category-search-cont">
+        <owl-carousel [options]="OwlOptionssearch" [carouselClasses]="['owl-theme', 'sliding']">
+          <div class="item">
+            <div class="category-search-box">
+              <a href="javascript:;">Shows</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="category-search-box">
+              <a href="javascript:;">RJ's</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="category-search-box">
+              <a href="javascript:;">Top Songs</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="category-search-box">
+              <a href="javascript:;">Movie Trailors</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="category-search-box">
+              <a href="javascript:;">Videos</a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="category-search-box">
+              <a href="javascript:;">Memory Lane</a>
+            </div>
+          </div>
+        </owl-carousel>
+      </div>
+    </div> -->
+
+    <div class="slide-section" *ngIf="showFlg==1">
+      <h2>Shows Search</h2>
+      <div class="slide-section-cont3">
+
+        <owl-carousel [options]="OwlOptionstwo" [carouselClasses]="['owl-theme', 'sliding']">
+          <div class="item" *ngFor="let showItem of getShows">
+            <div class="slide-section-box">
+              <a href="/show-detail/{{showItem.slug}}" >
+                <img src="{{showItem.thumbnailFullPath}}" />
+                <p>{{showItem.title}}</p>
+              </a>
+            </div>
+          </div>
+
+        </owl-carousel>
+      </div>
+    </div>
+
+    <div class="slide-section" *ngIf="rjFlg==1">
+      <h2>Rj Search</h2>
+      <div class="slide-section-cont3">
+        <owl-carousel [options]="OwlOptionsfive" [carouselClasses]="['owl-theme', 'sliding']">
+          <div class="item" *ngFor="let getJockeysItem of getJockeys">
+            <div class="slide-section-box">
+              <a href="rj/{{getJockeysItem.slug}}">
+                <img src="{{getJockeysItem.verticalImagePath}}" />
+                <p>{{getJockeysItem.title}}</p>
+              </a>
+            </div>
+          </div>
+
+
+        </owl-carousel>
+      </div>
+    </div>
+
+    <div class="slide-section" *ngIf="musicFlg==1">
+      <h2>Music Search</h2>
+      <div class="slide-section-cont3">
+        <owl-carousel [options]="OwlOptionssix" [carouselClasses]="['owl-theme', 'sliding']">
+          <div class="item" *ngFor="let getSongItem of getSong">
+            <div class="slide-song">
+              <a href="javascript:;" (click)="playSg(getSongItem.slug)">{{getSongItem.title}}</a>
+            </div>
+          </div>
+
+
+        </owl-carousel>
+      </div>
+    </div>
+
+
+  </div>
+</div>

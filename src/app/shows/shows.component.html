@@ -1,0 +1,46 @@
+<div class="show-page-banner">
+  <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/banner/showban.jpg" />
+  <div class="home-shade">
+    <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/whiteshde-up.png" />
+  </div>
+</div>
+<div class="home-bg">
+
+  <ng-container *ngIf="type==1">
+
+    <h2>
+      <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/videocamicon.png" />Shows of Bhubaneswar
+    </h2>
+
+</ng-container>
+
+<ng-container *ngIf="type==2">
+
+  <h2>
+    <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/videocamicon.png" />Shows of Rourkela
+  </h2>
+
+</ng-container>
+
+
+  <div class="showcontainer">
+    <div class="row">
+      <div class="col-sm-3" *ngFor="let item of showData">
+        <div class="showbox">
+          <div class="showbox-top">
+            <h2>
+              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/microphoneicon-red.png" />{{item.title}}
+            </h2>
+          </div>
+          <div class="show-bottom">
+            <img src="{{item.imageFullPath}}">
+            <h3>{{item.fullStartTime}} - {{item.fullEndTime}}</h3>
+            <p>{{item.week}}</p>
+            <a href="javascript:;" routerLink="/show-detail/{{item.slug}}">Show Details</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

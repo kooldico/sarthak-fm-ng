@@ -1,0 +1,87 @@
+<div class="rj-page-banner">
+  <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/banner/rjback.jpg">
+  <div class="home-shade">
+    <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/whiteshde-up.png" />
+  </div>
+</div>
+<div class="home-bg">
+  <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/microphoneicon.png"> RJ</h2>
+
+  <div class="rj-container">
+    <div class="row">
+      <div class="col-sm-5 order-sm-7">
+        <div class="rj-images">
+          <div class="rj-images-cont">
+            <div class="rj-images-cd">
+              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/cd.png">
+            </div>
+            <div class="rj-images-ID">
+              <img src="{{showData.imageFullPath}}">
+            </div>
+            <div class="rj-images-pin">
+              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/rj-pin.png">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-7 order-sm-1">
+        <div class="rj-details">
+          <h2>{{showData.title}}</h2>
+          <!-- <h3>Lorem Ipsum is simply dummy text of the printing</h3> -->
+          <p>{{showData.description}}</p>
+          <div class="show-details-rj">
+            <div class="rj-show-calen">
+              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/date-time.png">
+            </div>
+            <div class="show-details-rjtwxt">
+              <h4>{{showData.temp_week}}</h4>
+              <h5>{{showData.fullStartTime}} - {{showData.fullEndTime}}</h5>
+            </div>
+          </div>
+          <div class="rj-social-div">
+            <a href="{{showData.fb_link}}"><i class="fab fa-facebook-f"></i></a>
+            <a href="{{showData.twitter_link}}"><i class="fab fa-twitter"></i></a>
+            <a href="{{showData.instagram_link}}"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="section-holder">
+    <div class="section-holder-inn">
+      <div class="section-holder-cont">
+
+        <ng-container *ngIf="slideFlag==1">
+
+          <owl-carousel  [options]="OwlOptionsfive"
+            [carouselClasses]="['owl-theme', 'sliding']">
+            <div class="item" *ngFor="let otherR of showOtherRj">
+              <div class="section-holder-box">
+                <a href="{{baseUrl}}rj/{{otherR.slug}}">
+                  <img src="{{otherR.verticalImagePath}}" />
+                  <div class="img-shadow">
+                    <div class="img-shadow-cont">
+                      <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/magnifying.png" />
+                      <span>{{otherR.title}}</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+
+          </owl-carousel>
+
+
+
+        </ng-container>
+
+
+
+
+      </div>
+    </div>
+  </div>
+</div>

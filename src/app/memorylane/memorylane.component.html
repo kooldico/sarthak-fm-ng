@@ -1,0 +1,47 @@
+<div class="lane-page-banner">
+  <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/banner/topsongs3.jpg" />
+  <div class="home-shade">
+    <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/whiteshde-up.png" />
+  </div>
+</div>
+<div class="home-bg">
+
+    <ng-container *ngIf="type==1">
+        <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/music-player.png"> Top Songs</h2>
+    </ng-container>
+
+    <ng-container *ngIf="type==2">
+        <h2><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/music-player.png"> Memory Lane</h2>
+    </ng-container>
+
+
+
+
+
+    <div class="songs-container">
+      <div class="row">
+        <div class="col-sm-6" *ngFor="let showSong of showSongs">
+          <div class="half-cont  songclick">
+            <a href="javascript:;" (click)="playSong(showSong.slug)">
+              <div class="half-cont-img sameHeight">
+                <img src="{{showSong.thumbnailFullPath}}">
+              </div>
+              <div class="half-cont-name sameHeight">
+                <h2>{{showSong.title}}</h2>
+                <p>{{showSong.description}}</p>
+              </div>
+              <div class="half-cont-btn sameHeight">
+                <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/play.png">
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+</div>

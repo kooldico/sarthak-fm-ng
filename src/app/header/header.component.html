@@ -1,0 +1,228 @@
+<div class="header-cont">
+  <div class="navbar-web">
+    <div class="top-center-left">
+      <div class="top-social">
+
+        <a href="{{social.link}}" *ngFor="let social of socialLinks" target="_blank">
+
+          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/social-facebook-circular-button.png" *ngIf="social.id==1" />
+          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/twitter-circular-button.png" *ngIf="social.id==2"  />
+          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/instagram.png" *ngIf="social.id==3"  />
+          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/sm_5a98273b54a18.png" *ngIf="social.id==4" />
+        </a>
+        <!-- <a href="javascript:;"
+          ><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/instagram.png"
+        /></a>
+        <a href="javascript:;"
+          ><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/twitter-circular-button.png"
+        /></a>
+        <a href="javascript:;"
+          ><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/sm_5a98273b54a18.png"
+        /></a> -->
+      </div>
+      <ul>
+        <li ><a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/home']">Home</a></li>
+        <li >
+          <div class="dropdown">
+            <button class="dropbtn">
+              Shows <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" [routerLinkActive]="['active-menu']" routerLink="/shows-bhu">Bhubaneswar</a>
+              <a href="#" [routerLinkActive]="['active-menu']" routerLink="/shows-rou">Rourkela</a>
+            </div>
+          </div>
+        </li>
+        <li >
+          <div class="dropdown">
+            <button class="dropbtn">
+              RJ's <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="{{baseUrl}}rj/{{showJockey.slug}}" [routerLinkActive]="['active-menu']"  *ngFor="let showJockey of showJockeys">{{showJockey.title}}</a>
+
+            </div>
+          </div>
+        </li>
+        <li ><a href="javascript:;" [routerLinkActive]="['active-menu']" class="fmclick" (click)="playFm()">Live FM</a></li>
+      </ul>
+    </div>
+    <div class="top-center-logo">
+        <a href="javascript:;" [routerLink]="['/home']">
+          <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/logo-eng.png" id="logoenglish" />
+        </a>
+    </div>
+    <div class="top-center-right">
+      <div class="top-search  searchclick">
+        <!-- <div class="top-lang">
+          <ul>
+            <li>
+              <div class="dropdown">
+                <button class="dropbtn">
+                  ENGLISH <i class="fa fa-angle-down"></i>
+                </button>
+                <div class="dropdown-content">
+                  <a href="#">ENGLISH</a>
+                  <a href="#">ORIYA</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div> -->
+        <div class="topsearch-div">
+          <input placeholder="Search.." />
+          <div class="search-btn">
+            <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/magnifying2.png" />
+          </div>
+        </div>
+      </div>
+      <ul>
+        <li ><a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/top-song']">Top Songs</a></li>
+        <li>
+          <a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/memory-lane']"
+            >Down the Memory lane</a>
+        </li>
+        <!-- <li>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Down the Memory lane <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+        </li> -->
+        <!-- <li>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Videos <i class="fa fa-angle-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#" [routerLink]="['/topsongs']">Top Songs</a>
+              <a href="#" [routerLink]="['/movietrailor']">Movie Trailors</a>
+            </div>
+          </div>
+        </li> -->
+        <li >
+          <a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/movietrailor']"
+            >Movie Trailors</a
+          >
+        </li>
+        <li ><a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/videos']">Videos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="navbar-mob">
+    <div class="resposnive-logo">
+      <a href="javascript:;" [routerLink]="['/home']">
+        <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/logo-eng.png" id="logoenglish" />
+      </a>
+    </div>
+    <div class="resposnive-btn">
+      <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/menu.png" />
+    </div>
+  </div>
+</div>
+
+<div class="resposive-menu-cont">
+  <div class="cross">
+    <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/close.png" />
+  </div>
+  <div class="res-main-cont">
+    <div class="topsearch-div searchclick cross_link">
+      <input placeholder="Search.." />
+      <div class="search-btn">
+        <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/magnifying2.png" />
+      </div>
+    </div>
+    <ul>
+      <li ><a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/home']" class="cross_link">Home</a></li>
+      <li >
+        <div class="dropdown">
+          <button class="dropbtn">
+            Shows <i class="fa fa-angle-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" [routerLinkActive]="['active-menu']" class="cross_link" routerLink="/shows-bhu">Bhubaneswar</a>
+            <a href="#" [routerLinkActive]="['active-menu']" class="cross_link" routerLink="/shows-rou">Rourkela </a>
+            </div>
+        </div>
+      </li>
+      <li >
+        <div class="dropdown">
+          <button class="dropbtn">RJ's <i class="fa fa-angle-down"></i></button>
+          <div class="dropdown-content">
+            <a href="{{baseUrl}}rj/{{showJockey.slug}}" [routerLinkActive]="['active-menu']" class="cross_link" *ngFor="let showJockey of showJockeys">{{showJockey.title}}</a>
+
+          </div>
+        </div>
+      </li>
+      <li class="cross_link" ><a href="javascript:;" [routerLinkActive]="['active-menu']" class="fmclick" (click)="playFm()">Live FM</a></li>
+      <li ><a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/top-song']" class="cross_link">Top Songs</a></li>
+      <li >
+        <a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/memory-lane']"  class="cross_link"
+          >Down the Memory lane</a
+        >
+      </li>
+      <!-- <li>
+          <div class="dropdown">
+              <button class="dropbtn">
+                  Down the Memory lane
+                  <i class="fa fa-angle-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+              </div>
+            </div>
+      </li> -->
+      <!-- <li>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Videos
+            <i class="fa fa-angle-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#" [routerLink]="['/topsongs']">Top Songs</a>
+            <a href="#" [routerLink]="['/movietrailor']">Movie Trailors</a>
+          </div>
+        </div>
+      </li> -->
+      <li >
+        <a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/movietrailor']"  class="cross"
+          >Movie Trailors</a
+        >
+      </li>
+      <li ><a href="javascript:;" [routerLinkActive]="['active-menu']" [routerLink]="['/videos']" class="cross_link">Videos</a></li>
+
+      <!-- <li>
+        <div class="dropdown res-lan">
+          <button class="dropbtn">
+            ENGLISH <i class="fa fa-angle-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">ENGLISH</a>
+            <a href="#">ORIYA</a>
+          </div>
+        </div>
+      </li> -->
+    </ul>
+    <div class="top-social">
+      <a href="javascript:;"
+        ><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/social-facebook-circular-button.png"
+      /></a>
+      <a href="javascript:;"
+        ><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/instagram.png"
+      /></a>
+      <a href="javascript:;"
+        ><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/twitter-circular-button.png"
+      /></a>
+      <a href="javascript:;"
+        ><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/sm_5a98273b54a18.png"
+      /></a>
+    </div>
+  </div>
+</div>

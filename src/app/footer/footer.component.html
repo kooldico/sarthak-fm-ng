@@ -1,0 +1,59 @@
+<footer>
+    <div class="footer-cont">
+        <div class="footer-cont-img">
+            <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/footer-img/whiteshde-down.png">
+        </div>
+        <div class="container">
+        <div class="bottom-logo-div">
+            <div class="bottom-logo">
+                    <a href="javascript:;" [routerLink]="['/home']">
+                        <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/logo-eng.png" id="logoenglish" />
+                      </a>
+            </div>
+        </div>
+        <div class="bottom-cont">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="bottom-link-div">
+                        <h2>QUICK LINKS</h2>
+                        <a href="javascript:;" [routerLink]="['/about']">About Us</a>
+                        <a href="javascript:;" [routerLink]="['/contact']">Contact Us</a>
+                        <a href="javascript:;" [routerLink]="['/advertise']">Advertise With Us</a>
+                        <a href="javascript:;" [routerLink]="['/terms']">Terms & Conditions</a>
+                        <a href="javascript:;" [routerLink]="['/privacy']">Privacy Policy</a>
+                        <a href="sitemap.xml" target="_blank" >Sitemap</a>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="bottom-link-div">
+                        <h2>Address</h2>
+                        <p>Sarthak Tower, Module - 1,
+                            EP & GP Block, Sector V,
+                            OdishA - 500025, India.</p>
+                        <a href="tel:+91 9876543210">+91 9876543210</a>
+                        <a href="mailto:info@sarthakfm.com">info@sarthakfm.com</a>
+                        <div class="bottom-social">
+                            <a href="{{social.link}}" *ngFor="let social of socialLinks" target="_blank">
+
+                              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/social-facebook-circular-button.png" *ngIf="social.id==1" />
+                              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/twitter-circular-button.png" *ngIf="social.id==2"  />
+                              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/instagram.png" *ngIf="social.id==3"  />
+                              <img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/sm_5a98273b54a18.png" *ngIf="social.id==4" />
+
+                            </a>
+                            <!-- <a href="javascript:;"><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/instagram.png"></a>
+                            <a href="javascript:;"><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/twitter-circular-button.png"></a>
+                            <a href="javascript:;"><img src="https://sarthakimage.s3.ap-south-1.amazonaws.com/assets/universal/sm_5a98273b54a18.png"></a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="bottom-map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4430.504249434846!2d85.74457352270713!3d20.968767714878318!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a192dea43cac54b%3A0x3a7c24c24876022c!2sOdisha%2C%20759024!5e0!3m2!1sen!2sin!4v1566987158066!5m2!1sen!2sin" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</footer>
